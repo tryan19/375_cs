@@ -1,4 +1,4 @@
-
+#this program gives you the hypotenuse to your pythagorean theorem
 
 def main():
     print ("this program gives you the hypotenuse to your pythagorean theorem"
