@@ -1,5 +1,3 @@
-
-
 # craps.py
 #
 # This program simulates the dice game craps. The user starts with $100 and is allowed to bet on the roll of two
@@ -17,22 +15,33 @@
 
 import random
 
+money = 100
+bet = 0
 
 def main():
+
+    global money, bet
+
     display_welcome()
 
     play_again = True
     while play_again:
+        bet = eval(input("What's your bet?"))
+
         total = roll_dice()
+
         if total == 7 or total == 11:
             print("You win!")
+            money = money + bet
         elif total == 2 or total == 3 or total == 12:
             print("You lose!")
+            money = money - bet
         else:
             re_roll(total)
 
         print() # Blank line for spacing
-        play_again = (input("Press enter to play another round or type 'N' to quit ") == '')
+        print ("you now have $", money)
+        play_again = (input("Enter 'y' to play again") == 'y')
         clear_screen()
 
 
