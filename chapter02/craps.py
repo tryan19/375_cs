@@ -26,7 +26,8 @@ def main():
 
     play_again = True
     while play_again:
-        bet = eval(input("What's your bet?"))
+        print("you have $100")
+        bet = place_bet()
 
         total = roll_dice()
 
@@ -40,7 +41,7 @@ def main():
             re_roll(total)
 
         print() # Blank line for spacing
-        print ("you now have $", money)
+        print ("you now have $", money, sep="")
         play_again = (input("Enter 'y' to play again") == 'y')
         clear_screen()
 
@@ -57,7 +58,17 @@ def display_welcome():
     print("$                                              $")
     print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
     print()
+def place_bet():
+    raw_bet= eval(input("You have $%s. what would you like to bet? ($5-$%s)"% (money, money)))
 
+    #Here we need to validate raw_bet!
+    if raw_bet < 5:
+        print("Sorry, the minium bet is $5 so that's what we'll use")
+        raw_bet= 5
+    elif raw_bet > money:
+        print("Sorry, the maxium bet is $", money, "so that's what we'll use")
+
+    return raw_bet
 
 def roll_dice():
     input("Press Enter to roll the dice...") # We don't do anything with the input, we're just using it to pause the game
@@ -85,8 +96,10 @@ def re_roll(point):
 
     if total == point:
         print("You win!")
+        money= money + bet
     else:
         print("You lose!")
+        money= money - bet
 
 
 main()
