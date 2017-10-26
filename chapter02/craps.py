@@ -26,7 +26,6 @@ def main():
 
     play_again = True
     while play_again:
-        print("you have $100")
         bet = place_bet()
 
         total = roll_dice()
@@ -42,6 +41,12 @@ def main():
 
         print() # Blank line for spacing
         print ("you now have $", money, sep="")
+
+        if money < 5:
+            print("you don't have enough money to play, better luck next time")
+            play_again = False
+
+
         play_again = (input("Enter 'y' to play again") == 'y')
         clear_screen()
 
@@ -87,6 +92,7 @@ def roll_dice():
 
 
 def re_roll(point):
+    global money, bet
     print("You have to keep rolling until you get another", point)
     print() # Blank line for spacing
 
@@ -96,10 +102,10 @@ def re_roll(point):
 
     if total == point:
         print("You win!")
-        money= money + bet
+        money = money + bet
     else:
         print("You lose!")
-        money= money - bet
+        money = money - bet
 
 
 main()
