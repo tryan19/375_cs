@@ -6,48 +6,17 @@ def main():
 
 
     # Draw your face here!
+    size = eval(input("How big do you want to make the window? "))
 
-    center = Point(100, 100)
-    circle = Circle(center, 30)
-    circle.setFill('blue')
-    circle.draw(win)
-    label = Text(center, "")
-    label.draw(win)
+    win = GraphWin("Scaling Example", size, size)
+    win.setCoords(0, 0, 10, 10)
 
-    center= Point(100,100)
-    circle = Circle(center, 20)
-    circle.setFill('green')
-    circle.draw(win)
-    label = Text(center, "")
-    label.draw(win)
+    rectangle = Rectangle(Point(2.1, 3), Point(2, 8))
+    rectangle.setFill('yellow')
+    rectangle.setOutline('black')
+    rectangle.draw(win)
 
-    center = Point(200, 100)
-    circle = Circle(center, 30)
-    circle.setFill('red')
-    circle.draw(win)
-    label = Text(center, "")
-    label.draw(win)
 
-    center = Point(200, 100)
-    circle = Circle(center, 20)
-    circle.setFill('green')
-    circle.draw(win)
-    label = Text(center, "")
-    label.draw(win)
-
-    center = Point(200, 100)
-    circle = Circle(center, 5)
-    circle.setFill(color_rgb(0,0,0))
-    circle.draw(win)
-    label = Text(center, "")
-    label.draw(win)
-
-    center = Point(100, 100)
-    circle = Circle(center, 5)
-    circle.setFill(color_rgb(0,0,0))
-    circle.draw(win)
-    label = Text(center, "")
-    label.draw(win)
 
 
 
