@@ -20,6 +20,10 @@ def main():
     win.setCoords(0, 0, canvas_size, canvas_size)
     win.setBackground("black")
 
+    score_text = Text(Point(2,18),"Score:0")
+    score_text.setTextcolor("white")
+    score_text.draw(win)
+
     circle = Circle(Point(canvas_size / 2, canvas_size / 2), 2)
     circle.setFill("white")
     circle.draw(win)
