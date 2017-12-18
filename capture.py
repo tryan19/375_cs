@@ -19,7 +19,6 @@ def main():
 
     window_size = 600
     canvas_size = 20
-    move = (Point(-5, -5))
 
     win = GraphWin("Capture the Pellets!", window_size, window_size)
     win.setCoords(0, 0, canvas_size, canvas_size)
@@ -56,13 +55,14 @@ def main():
     move_to_random_point(pellet, canvas_size)
 
     special_pellet = Circle(Point(0, 0), 1)
-    special_pellet.setFill(color_rgb(255,20,147))
+    special_pellet.setFill(color_rgb(127,255,212))
     special_pellet.draw(win)
     move_to_random_point(special_pellet, canvas_size)
 
     time_check = time.time();
     while timer > 0:
         key = win.checkKey()
+
 
         delta_x = 0
         delta_y = 0
@@ -89,7 +89,6 @@ def main():
             score += 5
             score_text.setText("score:" + str(score))
             move_to_random_point(special_pellet, canvas_size)
-
 
         if (time.time() - time_check) > 1:
             time_check = time.time()
