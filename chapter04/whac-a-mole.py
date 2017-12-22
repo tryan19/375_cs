@@ -7,9 +7,6 @@
 
 
 
-from graphics import *
-
-
 def main():
     print("Click on the circles to increase your score")
 

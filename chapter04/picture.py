@@ -1,4 +1,4 @@
-from graphics import *
+from chapter04.graphics import *
 
 
 def main():

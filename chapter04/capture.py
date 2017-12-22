@@ -3,13 +3,15 @@
 # This program is a simple game called "Capture the Pellets!". The user moves a large white ball around the screen
 # using the arrow keys to "capture" a small, randomly-placed, yellow pellet. They also can get a blue pellet that
 # is worth five points and is also on the screen.  The program keeps track of the score and a
-# countdown timer it also keeps track of the high score. The goal is to capture as many pellets as possible before time expires.
+# countdown timer it also keeps track of the high score and remembers it after you quit out of the game .
+# The goal is to capture as many pellets as possible before time expires.
 #
 # by Tom Ryan
 
-from graphics import *
 from math import *
 from random import *
+
+from chapter04.graphics import *
 
 
 def main():
